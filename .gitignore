@@ -3,3 +3,9 @@ backups
 elpa
 ido.last
 places
+.session
+ac-comphist.dat
+eshell
+history
+recentf
+tramp
