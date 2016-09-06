@@ -24,7 +24,6 @@
   (error "Please move init-local.el to ~/.emacs.d/lisp"))
 (require 'init-local nil t)
 
-
 (add-hook 'after-init-hook
           (lambda ()
             (message "init completed in %.2fms"
@@ -43,3 +42,5 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
