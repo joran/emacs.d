@@ -51,7 +51,6 @@
 ;; ====================================
 ;; Encoding/Descoding of property files
 ;; ====================================
-
 (setq js-unicode-mappings
   '(
    ("Å" "\\u00C5")
@@ -130,6 +129,20 @@
       (cons '("_sv\\.properties$" . resource-bundle-sv-mode) auto-mode-alist))
 
 
+(defun just-one-space-in-region (beg end)
+  "replace all whitespace in the region with single spaces"
+  (interactive "r")
+  (save-excursion
+    (save-restriction
+      (narrow-to-region beg end)
+      (goto-char (point-min))
+      (while (re-search-forward "\\s-+" nil t)
+        (replace-match " ")))))
+
+(defun json-format ()
+  (interactive)
+  (save-excursion
+    (shell-command-on-region (mark) (point) "python -m json.tool" (buffer-name) t)))
 
 (toggle-frame-fullscreen)
 
