@@ -23,6 +23,6 @@
 (global-whitespace-cleanup-mode t)
 
 (global-set-key [remap just-one-space] 'cycle-spacing)
-
+(setq default-tab-width 4)
 
 (provide 'init-whitespace)
